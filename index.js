@@ -10,10 +10,12 @@ async function request (code, chapter) {
   const jsonStr = {
     code,
     msg: requestCode[code],
-    data: {
-      chapter,
-      [requestDataKey[code]]: data[requestDataKey[code]][chapter]
-    }
+    data: [
+      {
+        chapter,
+        [requestDataKey[code]]: data[requestDataKey[code]][chapter]
+      }
+    ]
   }
   console.log(JSON.stringify(jsonStr, null, '  '));
   const response = await fetch(requestUrl, {

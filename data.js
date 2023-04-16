@@ -91,26 +91,16 @@ export const data = {
   },
 
   result: {
-    '3.5': {
-      result: [...resultData.map(item => ({ ...item, resistValue: '0L' }))]
-    },
-    '3.6': {
-      result: [...resultData.map(item => ({ ...item, resistValue: '0.0' }))]
-    },
-    '3.7': {
-      result: [...resultData.map(item => ({
-        ...item,
-        resistValue: '0.044',
-        secondaryValtage: '28.2',
-        secFator: '3.0'
-      }))]
-    },
-    '3.9': {
-      result: resultData
-    },
-    '3.10': {
-      result: resultData
-    }
+    '3.5': [...resultData.map(item => ({ ...item, resistValue: '0L' }))],
+    '3.6': [...resultData.map(item => ({ ...item, resistValue: '0.0' }))],
+    '3.7': [...resultData.map(item => ({
+      ...item,
+      resistValue: '0.044',
+      secondaryValtage: '28.2',
+      secFator: '3.0'
+    }))],
+    '3.9': resultData,
+    '3.10': resultData
   },
 
   process: {
