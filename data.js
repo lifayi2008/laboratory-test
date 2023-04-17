@@ -93,6 +93,10 @@ export const data = {
       lowerLoad: '3.75',
       varyRatioNum: '01',
       props: [...paramsData]
+    },
+    '3.10': {
+      accuracy: '0.5S',
+      props: [...paramsData],
     }
   },
 
