@@ -99,6 +99,12 @@ export const data = {
       secondaryValtage: '28.2',
       secFator: '3.0'
     }))],
+    '3.8': [...resultData.map(item => ({
+      ...item,
+      resistValue: '0.044',
+      secondaryValtage: '28.2',
+      secFator: '3.0'
+    }))],
     '3.9': resultData,
     '3.10': resultData
   },
@@ -113,6 +119,10 @@ export const data = {
       props: [...sampleData.map((item) => ({ no: item.no, leakCurrValue: '0.0', standValtage: '23' }))]
     },
     '3.7': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, secFator: '3.0' }))]
+    },
+    '3.8': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, secFator: '3.0' }))]
     },
