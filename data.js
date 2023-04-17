@@ -4,6 +4,12 @@ export const sampleData = [
     roundNo: '01',
     chan: '1',
     jl: '1'
+  },
+  {
+    no: '02',
+    roundNo: '02',
+    chan: '2',
+    jl: '1'
   }
 ]
 
