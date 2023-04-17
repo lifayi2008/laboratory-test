@@ -13,7 +13,7 @@ export const sampleData = [
   }
 ]
 
-const paramsData = sampleData.map((item) => ({ no: item.no, chan: item.chain, roundNo: item.roundNo }))
+const paramsData = sampleData.map((item) => ({ no: item.no, chan: item.chan, roundNo: item.roundNo }))
 const resultData = sampleData.map((item) => ({ no: item.no, jl: item.jl }))
 const processCommon = {
   totalTime: '15',
