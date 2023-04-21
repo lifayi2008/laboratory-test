@@ -15,6 +15,19 @@ export const sampleData = [
 
 const paramsData = sampleData.map((item) => ({ no: item.no, chan: item.chan, roundNo: item.roundNo }))
 const resultData = sampleData.map((item) => ({ no: item.no, jl: item.jl }))
+
+const paramsCommon = {
+  accuracy: '0.5S',
+  liftGear: '',
+  upperLoad: '10',
+  powerFactor: '0.8L',
+  turnNum: '',
+  primaryLimit: '150',
+  secondaryLimit: '5',
+  lowerLoad: '3.75',
+  varyRatioNum: '01',
+}
+
 const processCommon = {
   totalTime: '15',
   leftTime: '3',
@@ -58,19 +71,13 @@ const process39 = {
 export const data = {
   params: {
     '3.5': {
-      accuracy: '0.5S',
       props: [...paramsData],
     },
     '3.6': {
-      accuracy: '0.5S',
-      liftGear: '',
-      upperLoad: '10',
-      powerFactor: '0.8L',
-      turnNum: '',
-      primaryLimit: '150',
-      secondaryLimit: '5',
-      lowerLoad: '3.75',
-      varyRatioNum: '01',
+      standValtage:"3000",
+      totalTime:"60",
+      leakCurrValue:"5",
+      secCurrValue:"40",
       props: [...paramsData]
     },
     '3.7': {
@@ -83,26 +90,56 @@ export const data = {
       props: [...paramsData]
     },
     '3.9': {
-      accuracy: '0.5S',
-      liftGear: '',
-      upperLoad: '10',
-      powerFactor: '0.8L',
-      turnNum: '',
-      primaryLimit: '150',
-      secondaryLimit: '5',
-      lowerLoad: '3.75',
-      varyRatioNum: '01',
+      ...paramsCommon,
       props: [...paramsData]
     },
     '3.10': {
-      accuracy: '0.5S',
+      ...paramsCommon,
       props: [...paramsData],
-    }
+    },
+    '3.12': {
+      ...paramsCommon,
+      turnNum: "1",
+      props: [...paramsData],
+    },
+    '3.13': {
+      ...paramsCommon,
+      props: [...paramsData],
+    },
+    '3.14': {
+      liftGear:"0(自动)",
+      upperLoad:"10",
+      powerFactor:"1.0",
+      varyRatioNum:"01",
+      lowerLoad:"3.75",
+      primaryLimit:"200",
+      secondaryLimit:"5",
+      accuracy:"0.5S",
+      plan2:{
+        humid:"60",
+        duration:"60",
+        tempe:"150",
+        humidDiff:"7.0",
+        tempeDiff:"1.0"
+      },
+      plan1:{
+        humid:"50",
+        duration:"60",
+        tempe:"-40",
+        humidDiff:"7.0",
+        tempeDiff:"1.0"
+      },
+      props: [...paramsData],
+    },
+    '3.15': {
+      ...paramsCommon,
+      props: [...paramsData],
+    },
   },
 
   result: {
     '3.5': [...resultData.map(item => ({ ...item, resistValue: '0L' }))],
-    '3.6': [...resultData.map(item => ({ ...item, resistValue: '0.0' }))],
+    '3.6': [...resultData.map(item => ({ ...item, resistValue: '0.01' }))],
     '3.7': [...resultData.map(item => ({
       ...item,
       resistValue: '0.044',
@@ -116,13 +153,17 @@ export const data = {
       secFator: '3.0'
     }))],
     '3.9': resultData,
-    '3.10': resultData
+    '3.10': resultData,
+    '3.12': resultData,
+    '3.13': resultData,
+    '3.14': resultData,
+    '3.15': resultData
   },
 
   process: {
     '3.5': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, resistValue: '0L' }))]
+      props: [...sampleData.map((item) => ({ no: item.no, resistValue: '4798' }))]
     },
     '3.6': {
       ...processCommon,
@@ -143,6 +184,24 @@ export const data = {
     '3.10': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39 }))]
+    },
+    '3.12': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39 }))]
+    },
+    '3.13': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39 }))]
+    },
+    '3.14': {
+      curHumidity:"31.09",
+      totalTime:"60",
+      curTempe:"31.09",
+      leftTime:"60"
+    },
+    '3.15': {
+      ...paramsCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, initialResist: '0.0645' }))]
     }
   }
 }
