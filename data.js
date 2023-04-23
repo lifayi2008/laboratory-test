@@ -28,11 +28,12 @@ const paramsCommon = {
   varyRatioNum: '01',
 }
 
-const processCommon = {
-  totalTime: '15',
-  leftTime: '3',
+export const processCommon = {
+  totalTime: '60',
+  leftTime: '4',
   propCount: sampleData.length.toString(),
 }
+
 const process39 = {
   ratioDiff: {
     upperLoads: {
