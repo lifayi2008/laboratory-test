@@ -195,13 +195,13 @@ export const data = {
       props: [...sampleData.map((item) => ({ no: item.no, ...process39 }))]
     },
     '3.14': {
-      curHumidity:"31.09",
+      curHumidity:"25.15",
       totalTime:"60",
-      curTempe:"31.09",
+      curTempe:"24.99",
       leftTime:"60"
     },
     '3.15': {
-      ...paramsCommon,
+      ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, initialResist: '0.0645' }))]
     }
   }
