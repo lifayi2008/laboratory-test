@@ -13,7 +13,7 @@ async function request (code, chapter, reqData) {
     msg: requestCode[code],
     data: [
       {
-        chapter,
+        chapter: (chapter === '3.14' && code === 1) ? '' : chapter,
         [requestDataKey[code]]: reqData ? reqData : data[requestDataKey[code]][chapter]
       }
     ]
@@ -63,23 +63,29 @@ async function startAllExperiment() {
   console.log(`=======================3.7 仪表保安系数试验 仪表保安系数试验 start===================`)
   await request(0, '3.7');
   await sleep(10000);
-  await request(2, '3.7');
+  for(let i = 61; i > 0; i--) {
+    await request(2, '3.7');
+  }
+  await request(2, '3.7-1');
   await sleep(10000);
   await request(1, '3.7');
   await sleep(10000);
 
-  await request(2, '3.8');
-  await sleep(10000);
-  await request(1, '3.8');
-  await sleep(10000);
   console.log(`=======================3.8 仪表保安系数试验 仪表保安系数试验 end===================`)
 
   console.log(`=======================3.9 室温条件下的误差试验 start===================`)
   await request(0, '3.9');
   await sleep(10000);
-  for(let i = 6; i > 0; i--) {
-    await request(2, '3.9');
-  }
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
+  await request(2, '3.9-120');
+
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
   await sleep(10000);
   await request(1, '3.9');
   await sleep(10000);
@@ -89,7 +95,7 @@ async function startAllExperiment() {
   await request(0, '3.10');
   await sleep(10000);
   await request(2, '3.10');
-  await request(2, '3.10');
+  await request(2, '3.10-150');
   await sleep(10000);
   await request(1, '3.10');
   console.log(`=======================3.10 磁饱和误差试验 end===================`)
@@ -100,9 +106,16 @@ async function startAllExperiment() {
   console.log(`=======================3.13 剩磁误差试验 start===================`)
   await request(0, '3.13');
   await sleep(10000);
-  for(let i = 9; i > 0; i--) {
-    await request(2, '3.13');
-  }
+  await request(2, '3.13');
+  await request(2, '3.13-5');
+  await request(2, '3.13-20');
+  await request(2, '3.13-100');
+  await request(2, '3.13-120');
+
+  await request(2, '3.13');
+  await request(2, '3.13-5');
+  await request(2, '3.13-20');
+  await request(2, '3.13-100');
   await sleep(10000);
   await request(1, '3.13');
   console.log(`=======================3.13 剩磁误差试验 end===================`)
@@ -110,9 +123,16 @@ async function startAllExperiment() {
   console.log(`=======================3.12 等安匝误差试验 start===================`)
   await request(0, '3.12');
   await sleep(10000);
-  for(let i = 9; i > 0; i--) {
-    await request(2, '3.12');
-  }
+  await request(2, '3.12');
+  await request(2, '3.12-5');
+  await request(2, '3.12-20');
+  await request(2, '3.12-100');
+  await request(2, '3.12-120');
+
+  await request(2, '3.12');
+  await request(2, '3.12-5');
+  await request(2, '3.12-20');
+  await request(2, '3.12-100');
   await sleep(10000);
   await request(1, '3.12');
   await sleep(10000);
@@ -121,11 +141,21 @@ async function startAllExperiment() {
   console.log(`=======================3.15 温升试验 start===================`)
   await request(0, '3.15');
   await sleep(10000);
-  for(let i = 9; i > 0; i--) {
+  await request(2, '3.15.1');
+  for(let i = 11; i > 0; i--) {
+    await request(2, '3.15');
+  }
+  await request(2, '3.15.2');
+  for(let i = 8; i > 0; i--) {
     await request(2, '3.15');
   }
   await sleep(10000);
   await request(1, '3.15');
+  await request(1, '3.15.1');
+  await request(1, '3.15.1');
+  await request(1, '3.15.1');
+  await sleep(10000);
+
   console.log(`=======================3.15 温升试验 end===================`)
 
   console.log(`=======================3.14 极限工作条件下的误差试验 start===================`)
@@ -134,6 +164,22 @@ async function startAllExperiment() {
   for(let i = 60; i > 0; i--) {
     await request(2, '3.14');
   }
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
+  await request(2, '3.9-120');
+  await sleep(10000);
+  await request(1, '3.14');
+
+  await sleep(10000);
+  for(let i = 60; i > 0; i--) {
+    await request(2, '3.14');
+  }
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
   await sleep(10000);
   await request(1, '3.14');
   console.log(`=======================3.14 极限工作条件下的误差试验 end===================`)
