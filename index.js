@@ -13,7 +13,7 @@ async function request (code, chapter, reqData) {
     msg: requestCode[code],
     data: [
       {
-        chapter: (chapter === '3.14' && code === 1) ? '' : chapter,
+        chapter: (chapter === '3.14' && code === 1) ? '' : chapter.split('-')[0],
         [requestDataKey[code]]: reqData ? reqData : data[requestDataKey[code]][chapter]
       }
     ]
@@ -141,19 +141,19 @@ async function startAllExperiment() {
   console.log(`=======================3.15 温升试验 start===================`)
   await request(0, '3.15');
   await sleep(10000);
-  await request(2, '3.15.1');
+  await request(2, '3.15-1');
   for(let i = 11; i > 0; i--) {
     await request(2, '3.15');
   }
-  await request(2, '3.15.2');
+  await request(2, '3.15-2');
   for(let i = 8; i > 0; i--) {
     await request(2, '3.15');
   }
   await sleep(10000);
   await request(1, '3.15');
-  await request(1, '3.15.1');
-  await request(1, '3.15.1');
-  await request(1, '3.15.1');
+  await request(1, '3.15-1');
+  await request(1, '3.15-1');
+  await request(1, '3.15-1');
   await sleep(10000);
 
   console.log(`=======================3.15 温升试验 end===================`)

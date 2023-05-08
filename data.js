@@ -263,11 +263,11 @@ export const data = {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, initialResist: '0.0645' }))]
     },
-    '3.15.1': {
+    '3.15-1': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, initialTempe: '25.2' }))]
     },
-    '3.15.2': {
+    '3.15-2': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, surfTempe: '26.2' }))]
     }
