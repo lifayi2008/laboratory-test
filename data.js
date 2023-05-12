@@ -1,13 +1,13 @@
 export const sampleData = [
   {
-    no: '01',
-    roundNo: '01',
+    no: '02-1',
+    roundNo: '02-1',
     chan: '1',
     jl: '1'
   },
   {
-    no: '02',
-    roundNo: '02',
+    no: '02-2',
+    roundNo: '02-2',
     chan: '2',
     jl: '1'
   }
@@ -34,19 +34,19 @@ export const processCommon = {
   propCount: sampleData.length.toString(),
 }
 
-const process39 = function (rate = '1') {
+const process39 = function (rate = '1', radioStand = '0.45', radioRound = '0.0891', angleStand = '27', angleRound = '7.707') {
   return {
     ratioDiff: {
       upperLoads: {
         stand: [
           {
-            value: '0.45',
+            value: radioStand,
             rate
           }
         ],
         round: [
           {
-            value: '0.0891',
+            value: radioRound,
             rate
           }
         ]
@@ -56,13 +56,13 @@ const process39 = function (rate = '1') {
       upperLoads: {
         stand: [
           {
-            value: '27',
+            value: angleStand,
             rate
           }
         ],
         round: [
           {
-            value: '7.707',
+            value: angleRound,
             rate
           }
         ]
@@ -207,11 +207,11 @@ export const data = {
     },
     '3.10': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100', '0.3', '0.1002', '18', '2.53') }))]
     },
     '3.10-150': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('150') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('150', '0.45', '-0.0587', '27', '5.48') }))]
     },
     '3.12': {
       ...processCommon,
