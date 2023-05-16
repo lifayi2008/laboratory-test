@@ -8,6 +8,16 @@ const requestCode = ['试验开始', '试验停止', '试验进行']
 const requestDataKey = ['params', 'result', 'process']
 
 async function request (code, chapter, reqData) {
+  if(code === 1) {
+    for(let i = 0; i < reqData.length; i++) {
+      await doRequest(code, chapter, [reqData[i]]);
+    }
+  } else {
+    await doRequest(code, chapter, reqData);
+  }
+}
+
+async function doRequest(code, chapter, reqData) {
   const jsonStr = {
     code,
     msg: requestCode[code],
@@ -60,7 +70,7 @@ async function startAllExperiment() {
   await sleep(10000);
   console.log(`=======================3.6 工频耐压试验 end===================`)
 
-  console.log(`=======================3.7 仪表保安系数试验 仪表保安系数试验 start===================`)
+  console.log(`=======================3.7 二次绕组 仪表保安系数试验 start===================`)
   await request(0, '3.7');
   await sleep(10000);
   for(let i = 61; i > 0; i--) {
@@ -71,7 +81,7 @@ async function startAllExperiment() {
   await request(1, '3.7');
   await sleep(10000);
 
-  console.log(`=======================3.8 仪表保安系数试验 仪表保安系数试验 end===================`)
+  console.log(`=======================3.7 二次绕组 end===================`)
 
   console.log(`=======================3.9 室温条件下的误差试验 start===================`)
   await request(0, '3.9');
