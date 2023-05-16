@@ -8,23 +8,24 @@ const requestCode = ['试验开始', '试验停止', '试验进行']
 const requestDataKey = ['params', 'result', 'process']
 
 async function request (code, chapter, reqData) {
+  let d = reqData ? reqData : data[requestDataKey[code]][chapter];
   if(code === 1) {
-    for(let i = 0; i < reqData.length; i++) {
-      await doRequest(code, chapter, [reqData[i]]);
+    for(let i = 0; i < d.length; i++) {
+      await doRequest(code, chapter, [d[i]]);
     }
   } else {
-    await doRequest(code, chapter, reqData);
+    await doRequest(code, chapter, d);
   }
 }
 
-async function doRequest(code, chapter, reqData) {
+async function doRequest(code, chapter, data) {
   const jsonStr = {
     code,
     msg: requestCode[code],
     data: [
       {
         chapter: (chapter === '3.14' && code === 1) ? '' : chapter.split('-')[0],
-        [requestDataKey[code]]: reqData ? reqData : data[requestDataKey[code]][chapter]
+        [requestDataKey[code]]: data
       }
     ]
   }
