@@ -207,7 +207,7 @@ export const data = {
     },
     '3.10': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100', '0.3', '0.1002', '18', '2.53') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100.0', '0.3', '0.1002', '18', '2.53') }))]
     },
     '3.10-150': {
       ...processCommon,
