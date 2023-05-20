@@ -182,7 +182,6 @@ async function startAllExperiment() {
   // await request(2, '3.9-5-1');
   // await request(2, '3.9-20-1');
   // await request(2, '3.9-100-1');
-  // await request(2, '3.9-120-1');
   // await sleep(10000);
   // await request(1, '3.14');
   //
@@ -195,6 +194,7 @@ async function startAllExperiment() {
   // await request(2, '3.9-5-lt');
   // await request(2, '3.9-20-lt');
   // await request(2, '3.9-100-lt');
+  // await request(2, '3.9-120-lt');
   // await request(2, '3.9-1-lt');
   // await request(2, '3.9-5-1-lt');
   // await request(2, '3.9-20-1-lt');
