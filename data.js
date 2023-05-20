@@ -3,7 +3,7 @@ export const sampleData = [
     no: '22190000007371',
     roundNo: '22190000007371',
     chan: '1',
-    jl: '0'
+    jl: '1'
   },
   {
     no: '22190000007365',
@@ -34,7 +34,7 @@ export const processCommon = {
   propCount: sampleData.length.toString(),
 }
 
-const process39 = function (rate = '1', loads='upperLoads', radioStand = '0.45', radioRound = '0.0891', angleStand = '27', angleRound = '7.707') {
+const process39 = function (rate = '1.0', loads='upperLoads', radioStand = '1.2', radioRound = '0.1413', angleStand = '72', angleRound = '15.42') {
   return {
     ratioDiff: {
       [loads]: {
@@ -191,39 +191,71 @@ export const data = {
     },
     '3.9-1': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('1', 'lowerLoads') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('1.0', 'lowerLoads', '1.2', '0.1750', '72', '9.142') }))]
     },
     '3.9-5': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5.0', 'upperLoads', '0.45', '0.0865', '27', '12.89') }))]
     },
     '3.9-5-1': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5', 'lowerLoads') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5.0', 'lowerLoads', '0.45', '0.1504', '27', '8.413') }))]
     },
     '3.9-20': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20.0', 'upperLoads', '0.3', '0.0260', '18', '6.348') }))]
     },
     '3.9-20-1': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20', 'lowerLoads') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20.0', 'lowerLoads', '0.3', '0.1042', '18', '4.961') }))]
     },
     '3.9-100': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100.0', 'upperLoads', '0.3', '0.0745', '18', '3.23') }))]
     },
     '3.9-100-1': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100', 'lowerLoads') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100.0', 'lowerLoads', '0.3', '0.1207', '18', '1.78') }))]
     },
     '3.9-120': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('120') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('120.0', 'upperLoads', '0.3', '0.0826', '18', '5.32') }))]
     },
-    '3.9-120-1': {
+    '3.9-lt': {
       ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, ...process39('120', 'lowerLoads') }))]
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('1.0', 'upperLoads', '1.3', '0.2750', '75', '12.142') }))]
+    },
+    '3.9-1-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('1.0', 'lowerLoads', '1.3', '0.2750', '75', '12.142') }))]
+    },
+    '3.9-5-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5.0', 'upperLoads', '0.45', '0.0865', '27', '12.89') }))]
+    },
+    '3.9-5-1-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5.0', 'lowerLoads', '0.45', '0.1504', '27', '8.413') }))]
+    },
+    '3.9-20-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20.0', 'upperLoads', '0.3', '0.0260', '18', '6.348') }))]
+    },
+    '3.9-20-1-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20.0', 'lowerLoads', '0.3', '0.1042', '18', '4.961') }))]
+    },
+    '3.9-100-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100.0', 'upperLoads', '0.3', '0.0745', '18', '3.23') }))]
+    },
+    '3.9-100-1-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100.0', 'lowerLoads', '0.3', '0.1207', '18', '1.78') }))]
+    },
+    '3.9-120-lt': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('120.0', 'upperLoads', '0.3', '0.0826', '18', '5.32') }))]
     },
     '3.10': {
       ...processCommon,
