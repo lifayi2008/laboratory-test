@@ -189,21 +189,41 @@ export const data = {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39() }))]
     },
+    '3.9-1': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('1', 'lowerLoads') }))]
+    },
     '3.9-5': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39('5') }))]
+    },
+    '3.9-5-1': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('5', 'lowerLoads') }))]
     },
     '3.9-20': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39('20') }))]
     },
+    '3.9-20-1': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('20', 'lowerLoads') }))]
+    },
     '3.9-100': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39('100') }))]
     },
+    '3.9-100-1': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('100', 'lowerLoads') }))]
+    },
     '3.9-120': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, ...process39('120') }))]
+    },
+    '3.9-120-1': {
+      ...processCommon,
+      props: [...sampleData.map((item) => ({ no: item.no, ...process39('120', 'lowerLoads') }))]
     },
     '3.10': {
       ...processCommon,

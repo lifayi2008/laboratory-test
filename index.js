@@ -166,31 +166,40 @@ async function startAllExperiment() {
   //
   // console.log(`=======================3.15 温升试验 end===================`)
   //
-  // console.log(`=======================3.14 极限工作条件下的误差试验 start===================`)
-  // await request(0, '3.14');
-  // await sleep(10000);
-  // for(let i = 60; i > 0; i--) {
-  //   await request(2, '3.14');
-  // }
-  // await request(2, '3.9');
-  // await request(2, '3.9-5');
-  // await request(2, '3.9-20');
-  // await request(2, '3.9-100');
-  // await request(2, '3.9-120');
-  // await sleep(10000);
-  // await request(1, '3.14');
-  //
-  // await sleep(10000);
-  // for(let i = 60; i > 0; i--) {
-  //   await request(2, '3.14');
-  // }
-  // await request(2, '3.9');
-  // await request(2, '3.9-5');
-  // await request(2, '3.9-20');
-  // await request(2, '3.9-100');
-  // await sleep(10000);
-  // await request(1, '3.14');
-  // console.log(`=======================3.14 极限工作条件下的误差试验 end===================`)
+  console.log(`=======================3.14 极限工作条件下的误差试验 start===================`)
+  await request(0, '3.14');
+  await sleep(10000);
+  for(let i = 60; i > 0; i--) {
+    await request(2, '3.14');
+  }
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
+  await request(2, '3.9-120');
+  await request(2, '3.9-1');
+  await request(2, '3.9-5-1');
+  await request(2, '3.9-20-1');
+  await request(2, '3.9-100-1');
+  await request(2, '3.9-120-1');
+  await sleep(10000);
+  await request(1, '3.14');
+
+  await sleep(10000);
+  for(let i = 60; i > 0; i--) {
+    await request(2, '3.14');
+  }
+  await request(2, '3.9');
+  await request(2, '3.9-5');
+  await request(2, '3.9-20');
+  await request(2, '3.9-100');
+  await request(2, '3.9-1');
+  await request(2, '3.9-5-1');
+  await request(2, '3.9-20-1');
+  await request(2, '3.9-100-1');
+  await sleep(10000);
+  await request(1, '3.14');
+  console.log(`=======================3.14 极限工作条件下的误差试验 end===================`)
 }
 
 startAllExperiment().then(console.log);
