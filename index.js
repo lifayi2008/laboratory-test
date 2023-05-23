@@ -53,11 +53,11 @@ async function startAllExperiment() {
     if(i === 5) {
       resistValue = '4769';
     }
-    let props = sampleData.map((item) => ({no: item.no, resistValue}))
-    for(let i = 0; i < props.length; i ++) {
-      let reqData = {...processCommon, leftTime: i.toString(), props: [props[i]]}
-      await request(2, '3.5', reqData);
+    for(let j = 0; j < sampleData.length; j++) {
+      let reqData = {...processCommon, leftTime: i.toString(), props: [{no: sampleData[j].no, resistValue}]}
+      await doRequest(2, '3.5', reqData);
     }
+    await sleep(1000);
   }
   await sleep(5000);
   await request(1, '3.5');
