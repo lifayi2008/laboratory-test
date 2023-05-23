@@ -165,11 +165,7 @@ export const data = {
   },
 
   process: {
-    '3.5': [...sampleData.map((item) => ({ no: item.no, resistValue: '4798' }))],
-    '3.6': {
-      ...processCommon,
-      props: [...sampleData.map((item) => ({ no: item.no, leakCurrValue: '0.0', standValtage: '23' }))]
-    },
+    '3.6': [...sampleData.map((item) => ({ no: item.no, leakCurrValue: '0.0', standValtage: '23' }))],
     '3.7': {
       ...processCommon,
       props: [...sampleData.map((item) => ({ no: item.no, secondaryValtage: '29.0Vp' }))]
