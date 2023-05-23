@@ -9,7 +9,7 @@ const requestDataKey = ['params', 'result', 'process']
 
 async function request (code, chapter, reqData) {
   let d = reqData ? reqData : data[requestDataKey[code]][chapter];
-  if(code === 1) {
+  if(code === 1 || code === 2) {
     for(let i = 0; i < d.length; i++) {
       await doRequest(code, chapter, [d[i]]);
     }
