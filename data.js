@@ -1,13 +1,13 @@
 export const sampleData = [
   {
-    no: '02-1',
-    roundNo: '02-1',
+    no: '221900052303',
+    roundNo: '221900052303',
     chan: '1',
     jl: '1'
   },
   {
-    no: '02-2',
-    roundNo: '02-2',
+    no: '221900052304',
+    roundNo: '221900052304',
     chan: '2',
     jl: '1'
   }
